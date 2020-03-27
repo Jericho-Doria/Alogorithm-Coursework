@@ -1,0 +1,119 @@
+1) Bubble Sort Solution
+
+import time
+start_time = time.time()
+#imports the input file of the grades
+#To input test cases import files in testcase folder, then change the variable name arr in
+# arr=[] and arr.append to any name as you like as long the file is imported
+numbers = open("arr.txt", "r")
+arr = []
+for _ in numbers:
+    arr.append(int(_))
+
+#bubble sort
+def bubbleSort(arr):
+#Traverse through all array elements
+    for i in range(len(arr)):
+#Last i elements are already in place
+        for j in range(0, len(arr) -i- 1):
+# traverse the array from 0 to n-i-1
+# Swap if the element found is lesser
+# than the next element
+            if arr[j]  < arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+bubbleSort(arr)
+
+def Classes_Sort(grade1,grade2):
+    grades = []
+
+    for i in arr:
+#Check for imported text file, arr, of first class and second class grade
+# add to the list and scan the length of the graded list
+        if  grade1 >= i >= grade2:
+            grades.append(i)
+    student_total = len(grades)
+    return student_total
+#Print Class orders of each specific class rankings
+print('Number of students with 1st class:',Classes_Sort(100,70))
+print('Number of students with 2:1 class:',Classes_Sort(69,60))
+print('Number of students with 2:2 class:',Classes_Sort(59,50))
+print('Number of students with 3rd class:',Classes_Sort(49,40))
+print('Number of students who failed:',Classes_Sort(39,-100))
+
+
+print(arr)
+
+end_time = time.time()
+
+print("\nRunning time: ", end_time-start_time)
+
+
+
+2) Random Number Generator 
+
+from random import randint
+
+#Create Random integers with specific range for the grades input
+a = [randint(0, 100 )for i in range(5)]
+with open("arr.txt", "w") as fwrite:
+    for listitem in a:
+        fwrite.write('%s\n' % listitem)
+
+
+
+
+
+3) Selection Sort Solution 
+
+mport time
+start_time = time.time()
+#imports the input file of the grades
+#To input test cases import files in testcase folder, then change the variable name arr in
+# arr=[] and arr.append to any name as you like as long the file is imported
+numbers = open("arr.txt", "r")
+arr = []
+for _ in numbers:
+    arr.append(int(_))
+
+#Selection sort
+def selectionSort(arr):
+#Traverse through all array elements
+    for i in range(len(arr)):
+#Find the maximum element in the remaining
+#unsorted array
+        min_idx = i
+        for j in range(i + 1, len(arr)):
+            if arr[min_idx] < arr[j]:
+                min_idx = j
+#Sap the found maximum element with
+#with the first
+        arr[i], arr[min_idx] = arr[min_idx], arr[i]
+
+selectionSort(arr)
+
+
+def Classes_Sort(grade1,grade2):
+    grades = []
+
+    for i in arr:
+#Check for imported text file, arr, of first class and second class grade
+# add to the list and scan the length of the graded list
+        if  grade1 >= i >= grade2:
+            grades.append(i)
+    student_total = len(grades)
+    return student_total
+#Print Class orders of each specific class rankings
+print('Number of students with 1st class:',Classes_Sort(100,70))
+print('Number of students with 2:1 class:',Classes_Sort(69,60))
+print('Number of students with 2:2 class:',Classes_Sort(59,50))
+print('Number of students with 3rd class:',Classes_Sort(49,40))
+print('Number of students who failed:',Classes_Sort(39,-100))
+
+
+print(arr)
+
+end_time = time.time()
+
+print("\nRunning time: ", end_time-start_time)
+
+
